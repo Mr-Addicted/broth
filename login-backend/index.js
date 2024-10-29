@@ -11,15 +11,15 @@ app.use(express.json());
 
 let db;
 
-// Connect to MongoDB
+// Verbind met MongoDB
 async function connectToDatabase() {
     const client = new MongoClient(process.env.MONGODB_URI);
     await client.connect();
-    db = client.db("logins").collection("Logins");
-    console.log("Connected to MongoDB");
+    db = client.db("BrotherDB").collection("brotherCOL"); // Update database and collection name
+    console.log("Verbonden met MongoDB");
 }
 
-// Login route
+// Inlog route
 app.post("/api/login", async (req, res) => {
     const { naam, wachtwoord } = req.body;
     try {
@@ -34,8 +34,8 @@ app.post("/api/login", async (req, res) => {
     }
 });
 
-// Start the server and connect to MongoDB
+// Start de server en verbind met MongoDB
 app.listen(port, async () => {
     await connectToDatabase();
-    console.log(`Server running on port ${port}`);
+    console.log(`Server draait op poort ${port}`);
 });
