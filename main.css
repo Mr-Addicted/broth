@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+* {
+    font-family: 'Cinzel', serif;
+    box-sizing: border-box; /* Zorg ervoor dat padding en margin niet de totale breedte beïnvloeden */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(186, 205, 223);
+}
+
+h1 {
+    text-align: center; /* Centraal uitlijnen van de kop */
+    font-weight: bold; /* Maak de tekst vetgedrukt */
+    margin-bottom: 20px; /* Ruimte onder de kop */
+    color: blue; /* Kleur van de kop, optioneel */
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Breedte van het formulier */
+    text-align: left; /* Links uitlijnen voor tekst in het formulier */
+}
+
+label {
+    display: block; /* Zorg ervoor dat labels als blokken worden weergegeven */
+    margin-bottom: 5px; /* Ruimte tussen label en invoerveld */
+    font-weight: bold; /* Maak de labels vetgedrukt voor betere zichtbaarheid */
+    color: blue; /* Kleur van de tekst blauw */
+    text-align: left; /* Links uitlijnen */
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%; /* Volledige breedte van het invoerveld */
+    padding: 10px; /* Padding binnen de invoervelden */
+    margin-bottom: 15px; /* Ruimte tussen de invoervelden */
+    border: 1px solid #ccc; /* Grijze rand */
+    border-radius: 4px; /* Ronde hoeken voor de invoervelden */
+    font-size: 16px; /* Lettergrootte */
+}
+
+/* Stijl voor de submitknop */
+input[type="submit"] {
+    background-color: #3822b2; /* Rode achtergrondkleur voor de knop */
+    color: white; /* Witte tekstkleur */
+    border: none; /* Geen rand */
+    padding: 10px; /* Padding binnen de knop */
+    border-radius: 4px; /* Ronde hoeken voor de knop */
+    cursor: pointer; /* Wijzig de cursor naar pointer */
+    font-size: 16px; /* Lettergrootte */
+    width: 100%; /* Volledige breedte van de knop */
+}
+
