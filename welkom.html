@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1 id="welcomeMessage"></h1>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const naam = urlParams.get('naam');
+        document.getElementById('welcomeMessage').innerText = `Welkom, ${naam}!`;
+    </script>
+</body>
+</html>

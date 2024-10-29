@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Brother Login</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel="icon" href="/images/logo.png" type="image/png">
-    </head>
-    <body>
-        <form>
-            <h1>Brother | Ace Roleplay</h1>    
-            <div>
-                <label for="naam">Naam:</label>
-                <input type="text" placeholder="">
-            </div>
-            <div>
-                <label for="password">Wachtwoord:</label>
-                <input type="password" placeholder="">
-            </div>
-            <input type="submit" value="login">
-        </form>
-    </body>
+<head>
+    <title>Brother Login</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="/images/logo.png" type="image/png">
+</head>
+<body>
+    <form id="loginForm">
+        <h1>Brother | Ace Roleplay</h1>    
+        <div>
+            <label for="naam">Naam:</label>
+            <input type="text" id="naam" name="naam" required>
+        </div>
+        <div>
+            <label for="password">Wachtwoord:</label>
+            <input type="password" id="wachtwoord" name="wachtwoord" required>
+        </div>
+        <input type="submit" value="login">
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent the form from submitting normally
+
+            const naam = document.getElementById('naam').value;
+            const wachtwoord = document.getElementById('wachtwoord').value;
+
+            // Send login request to the server
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ naam, wachtwoord })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                // Redirect to welcome page or show message
+                window.location.href = `/welcome.html?naam=${encodeURIComponent(naam)}`;
+            } else {
+                alert(data.message); // Show error message
+            }
+        });
+    </script>
+</body>
 </html>
