@@ -15,7 +15,7 @@ let db;
 async function connectToDatabase() {
     const client = new MongoClient(process.env.MONGODB_URI);
     await client.connect();
-    db = client.db("brotherDB").collection("Logins");
+    db = client.db("logins").collection("Logins");
     console.log("Connected to MongoDB");
 }
 
