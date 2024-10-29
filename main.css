@@ -6,6 +6,10 @@
 }
 
 body {
+    background-image: url('./images/achtergrond.jpg'); /* Vervang 'jouw-afbeelding.jpg' door de naam van je afbeelding */
+    background-size: cover; /* Past de afbeelding aan om het hele scherm te bedekken */
+    background-position: center; /* Centreert de afbeelding op de pagina */
+    background-repeat: no-repeat; /* Zorgt ervoor dat de afbeelding niet herhaalt */
     margin: 0;
     padding: 0;
     height: 100vh;
